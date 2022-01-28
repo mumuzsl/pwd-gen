@@ -26,7 +26,7 @@ var JsonFileCommand = &cli.Command{
 				return err
 			}
 
-			ctx.String("使用的字符串: %s \nmd5生成的字符串: %s \n结果: %s", domain.OriginalStr, md5Str, result)
+			ctx.String("使用的字符串: %s \nmd5生成的字符串: %s \n结果: %s\n", domain.OriginalStr, md5Str, result)
 		}
 
 		return nil

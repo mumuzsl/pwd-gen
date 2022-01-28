@@ -29,7 +29,7 @@ var root = &cli.Command{
 			return err
 		}
 
-		ctx.String("使用的字符串: %s \nmd5生成的字符串: %s \n结果: %s", originalStr, md5Str, result)
+		ctx.String("使用的字符串: %s \nmd5生成的字符串: %s \n结果: %s \n", originalStr, md5Str, result)
 
 		return nil
 	},
@@ -38,7 +38,7 @@ var root = &cli.Command{
 func main() {
 	err := cli.Root(root, cli.Tree(JsonFileCommand)).Run(os.Args[1:])
 	if err != nil {
-		fmt.Fprintln(os.Stderr, err)
+		_, _ = fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
 }
